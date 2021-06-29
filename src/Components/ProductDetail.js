@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
+import './product.css';
 
 const ProductDetail = () => {
     const {id} = useParams();
@@ -15,7 +16,11 @@ const ProductDetail = () => {
             <ProHead>Product Details</ProHead>
             <ProDesc>      
                 <ProImage>
-                    <img src={data.image} alt="Product Image" style={{width:"500px"}} />
+                    <img 
+                        src={data.image} 
+                        alt="Product Image" 
+                        className="proImage" 
+                    />
                 </ProImage>
                 <ProDetail>
                     <ProTitle>Title: {data.title}</ProTitle>
@@ -75,29 +80,31 @@ const ProImage = styled.div`
     }
 `;
 const ProDetail = styled.div`
-    margin-left: 100px;
-
-    @media screen and (max-width: 1400px){
-        margin-left: 60px;
+    padding-top: 30px;
+    padding-left: 50px;
+    @media (max-width:950px){
+        padding-right: 50px;
     }
-    @media screen and (max-width: 1300px){
-        margin-left: 40px;
+    @media (max-width:550px){
+        padding-left: 30px;
+        padding-right: 30px;
     }
-    @media screen and (max-width: 1100px){
-        margin-left: 20px;
+    @media (max-width:500px){
+        width: 100%;
     }
-    @media screen and (max-width: 950px){
-        margin-top: 50px;
+    @media (max-width:500px){
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `;
 const ProTitle = styled.h4`
-    padding: 0px 50px;
     letter-spacing: 0.5px;
     color: #353535; 
     font-weight: bold;
 `;
 const ProCategory = styled.p`
-    padding: 10px 50px;
+    padding: 10px 0px;
     color: #000;
     font-family: consolas;
     font-weight: bold;
@@ -109,15 +116,15 @@ const ProDescription = styled(ProCategory)`
     text-align: justify;
 `;
 const Buy = styled.button`
-    margin: 0px 50px;
     width: 100px;
     height: 35px;
     border: 1px solid rgba(0,0,0,.125);
     background-color: #7AD042;
     font-weight: bold; 
+    margin-bottom: 20px;
 `;
 const Cart = styled(Buy)`
     width: 120px;
-    margin: 0px;
+    margin-left: 10px;
     background-color: #42C3D0;
 `;

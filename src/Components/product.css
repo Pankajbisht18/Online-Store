@@ -1,0 +1,23 @@
+.proImage{
+    width: 500px;
+}
+@media (max-width:950px) {
+    .proImage{
+        width: 400px;
+    }
+}
+@media (max-width:600px) {
+    .proImage{
+        width: 350px;
+    }
+}
+@media (max-width:450px) {
+    .proImage{
+        width: 300px;
+    }
+}
+@media (max-width:360px) {
+    .proImage{
+        width: 250px;
+    }
+}
